@@ -29,6 +29,14 @@
 #   Omitting -d and the associated directory assumes all apps are in the current
 #   directory.
 
+export BAZEL_VC='C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC'
+export BAZEL_VS='C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+# Use double slashes
+# Note: Bazel requires NumPy (and potentially other packages?)
+# A new conda environment with numpy installed (`conda install numpy`) has been tested and works
+export PYTHON_BIN_PATH='C:\\Users\\pavloliasota\\Miniconda3\\envs\\mediapipe\\python.exe'
+
+
 set -e
 
 out_dir="."

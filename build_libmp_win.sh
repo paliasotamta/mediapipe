@@ -9,4 +9,4 @@ export PYTHON_BIN_PATH='C:\\Users\\pavloliasota\\Miniconda3\\envs\\mediapipe\\py
 # export BAZEL_VC_FULL_VERSION="14.33.31629"
 # export BAZEL_WINSDK_FULL_VERSION="10.0.19041.0"
 
-bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/libmp:libmp.dll
+bazel build -c dbg --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/libmp:libmp.dll
