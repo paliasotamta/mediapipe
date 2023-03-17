@@ -123,6 +123,24 @@ LIB_DEPS = [
 
     # Pose tracking
     "//mediapipe/graphs/pose_tracking:pose_tracking_cpu_deps",
+
+    # link against some other libs, embed as much as possible plz
+    "@com_google_protobuf//:protobuf",
+    "//mediapipe/framework/formats:affine_transform",
+    "//mediapipe/framework/formats:deleting_file",
+    "//mediapipe/framework/formats:frame_buffer",
+    "//mediapipe/framework/formats:image",
+    "//mediapipe/framework/formats:image_frame",
+    "//mediapipe/framework/formats:image_frame_opencv",
+    "//mediapipe/framework/formats:image_frame_pool",
+    "//mediapipe/framework/formats:image_multi_pool",
+    "//mediapipe/framework/formats:image_opencv",
+    "//mediapipe/framework/formats:location",
+    "//mediapipe/framework/formats:location_opencv",
+    "//mediapipe/framework/formats:matrix",
+    "//mediapipe/framework/formats:tensor",
+    "//mediapipe/framework/formats:video_stream_header",
+    "//mediapipe/framework/formats:yuv_image",
 ]
 
 cc_binary(
@@ -134,6 +152,7 @@ cc_binary(
     data = BIN_DATA,
     linkopts = ["-Wl,-soname,libmp.so"],
     linkshared = 1, ## Very important
+    linkstatic = 1,
 )
 cc_binary(
     target_compatible_with = [
@@ -143,6 +162,7 @@ cc_binary(
     deps = [":libmp_win"],
     data = BIN_DATA,
     linkshared = 1, ## Very important
+    linkstatic = 1,
 )
 
 cc_library(
