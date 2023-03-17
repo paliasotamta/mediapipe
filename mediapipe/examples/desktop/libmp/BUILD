@@ -32,6 +32,7 @@ BIN_DATA = [
     # Hand landmark
     "//mediapipe/modules/hand_landmark:hand_landmark_full.tflite",
     "//mediapipe/modules/hand_landmark:hand_landmark_lite.tflite",
+    "//mediapipe/modules/hand_landmark:handedness.txt",
 
     # Holistic
     "//mediapipe/modules/holistic_landmark:hand_recrop.tflite",
@@ -82,6 +83,7 @@ LIB_DEPS = [
     "//mediapipe/modules/hand_landmark:hand_landmark_tracking_cpu",
     "//mediapipe/calculators/util:annotation_overlay_calculator",
     "//mediapipe/calculators/util:detections_to_render_data_calculator",
+    "//mediapipe/graphs/hand_tracking:desktop_tflite_calculators",
 
     # Face detection
     "//mediapipe/graphs/face_detection:face_detection_full_range_desktop_live_deps",
