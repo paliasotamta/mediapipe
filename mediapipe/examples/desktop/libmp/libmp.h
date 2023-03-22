@@ -19,9 +19,12 @@
 #endif
 
 namespace mediapipe {
+	// Parse command line argument to use --resource_root_dir flag
+	MP_CPP_API void ParseCommandLine(int argc, char *argv[]);
 
 	// MP_CPP_API applies to all functions below
 	struct MP_CPP_API LibMP {
+
 		// Create a MP graph with the specified input stream
 		// Returns nullptr if initialization failed
 		static LibMP* Create(const char* graph, const char* inputStream);

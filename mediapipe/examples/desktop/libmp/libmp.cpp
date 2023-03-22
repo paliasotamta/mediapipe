@@ -1,8 +1,17 @@
 #include "libmp.h"
 #include "libmp_impl.h"
 #include "mediapipe/framework/formats/image_frame.h"
+#include "absl/flags/parse.h"
 
 namespace mediapipe {
+
+	MP_CPP_EXPORT void ParseCommandLine(int argc, char *argv[]) {
+		static bool parsed = false;
+		if (parsed) return;
+
+		parsed = true;
+  		absl::ParseCommandLine(argc, argv);
+	}
 
 	MP_CPP_EXPORT LibMP* LibMP::Create(const char* graph, const char* inputStream) 
 	{
